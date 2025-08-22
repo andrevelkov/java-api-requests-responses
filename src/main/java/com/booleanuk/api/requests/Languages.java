@@ -24,10 +24,9 @@ public class Languages {
                 return ResponseEntity.status(HttpStatus.CONFLICT)
                         .body("Language already exists.");
             }
-            languages.add(language);
-            return ResponseEntity.status(HttpStatus.CREATED).body(language);
         }
-        return ResponseEntity.badRequest().body("Error");
+        languages.add(language);
+        return ResponseEntity.status(HttpStatus.CREATED).body(language);
     }
 
     @GetMapping
